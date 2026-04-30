@@ -13,9 +13,9 @@ from tensorflow.keras.layers import LSTM, Dense, Input
 # 1. KONFIGURASI & SETUP
 # ==========================================
 # Mengambil kredensial dari Environment Variables (GitHub Secrets)
-SUPABASE_URL = os.getenv("https://efqhrsznmigsikkdvaxq.supabase.co")
-SUPABASE_KEY = os.getenv("eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImVmcWhyc3pubWlnc2lra2R2YXhxIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc3NzI4MjE0OSwiZXhwIjoyMDkyODU4MTQ5fQ.-YkSSi72I6_7X5lxkDy1HlipfxgAjatLjEVUPnPfsjU")
-UID = os.getenv("575b2d9d-fd40-40ab-872e-1918c8f70026") # UID kamu
+SUPABASE_URL = os.getenv("SUPABASE_URL")
+SUPABASE_KEY = os.getenv("SUPABASE_KEY")
+UID = os.getenv("USER_ID") # UID kamu
 
 BUCKET_NAME = "models"
 MODEL_H5_NAME = "forecaster_champion.h5" # Model asli untuk ditraining ulang
