@@ -25,6 +25,8 @@ jobs:
         env:
           SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
           SUPABASE_KEY: ${{ secrets.SUPABASE_KEY }}
+          USER_ID: ${{ secrets.USER_ID }}
         run: |
-          python scripts/data_processor.py
+          # Hanya jalankan train_model.py karena logika pembersihan data 
+          # sudah digabung di dalamnya
           python scripts/train_model.py
