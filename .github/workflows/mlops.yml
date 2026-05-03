@@ -1,0 +1,21 @@
+name: NeoTrack Continuous Training
+on:
+  schedule:
+    - cron: '0 2 * * 0' # Setiap Minggu jam 02:00
+  workflow_dispatch: # Bisa dijalankan manual
+
+jobs:
+  train:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with: { python_version: '3.9' }
+      - name: Install dependencies
+        run: pip install pandas tensorflow supabase-py
+      - name: Run Training
+        env:
+          URL: ${{ secrets.SUPABASE_URL }}
+          KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
+        run: python scripts/train_model.py
